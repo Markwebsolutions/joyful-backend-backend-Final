@@ -56,7 +56,7 @@ public class Subcategory {
 //	private Set<Product> products = new HashSet<>();
 
 	@ManyToMany(mappedBy = "subcategories")
-	@JsonIgnore // ✅ temporarily skip products in JSON to fix 500 error
+	@JsonIgnoreProperties("subcategories")  // ✅ temporarily skip products in JSON to fix 500 error
 	private Set<Product> products = new HashSet<>();
 
 //	newly added today
