@@ -62,7 +62,7 @@ public class Category {
 	}
 
 	@Transient
-	@JsonIgnoreProperties("subcategories") // optional if you want to avoid recursive loop
+	@JsonIgnore // ✅ This hides the top-level products list in JSON
 	private Set<Product> products = new HashSet<>();
 
 	public Set<Product> getProducts() {
